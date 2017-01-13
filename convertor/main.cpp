@@ -81,7 +81,7 @@ unsigned NumaraParteaFractionara(double number)
             }
         return numara;
     }
-void SirulUnitati(char Sir[4],int numar)
+void SirulUnitati(char Sir[10],int numar)
     {
        switch(numar)
             {
@@ -116,7 +116,7 @@ void AfisarePrecizie(double f)
         std::cout << std::fixed;
         std::cout << std::setprecision(NumaraParteaFractionara(f)) << f << std::fixed;
     }
-void AfisareRezultat(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultat(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -263,7 +263,7 @@ void MeniuExit()
 void MeniuLungime()
     {
         int index,index2,index3;
-        char SirUnitati[4];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -310,7 +310,7 @@ void Arie()
         cout<<"                                     7.km";cout <<(char)253<<"-Kilometru patrat \n";
         cout<<"\n";
     }
-void SirulUnitatiArie(char Sir[4],int numar)
+void SirulUnitatiArie(char Sir[10],int numar)
     {
         char b[2]={(char)253};
        switch(numar)
@@ -399,7 +399,7 @@ void PrelucrareRezultatArie(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatArie(int index,char SirUnitati[6],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatArie(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -461,7 +461,7 @@ void AfisareRezultatArie(int index,char SirUnitati[6],double ValoareaInitiala,do
 void MeniuArie()
     {
         int index,index2,index3;
-        char SirUnitati[6];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -505,7 +505,7 @@ void Volum()
         cout<<"                              4.l-Litru               8.m^3-Metri Cubi\n";
         cout<<"\n";
     }
-void SirulUnitatiVolum(char Sir[4],int numar)
+void SirulUnitatiVolum(char Sir[10],int numar)
     {
        switch(numar)
             {
@@ -595,7 +595,7 @@ void PrelucrareRezultatVolum(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatVolum(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatVolum(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -663,7 +663,7 @@ void AfisareRezultatVolum(int index,char SirUnitati[4],double ValoareaInitiala,d
 void MeniuVolum()
     {
         int index,index2,index3;
-        char SirUnitati[5];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -706,7 +706,7 @@ void Timp()
         cout<<"                              3.h-Ora                 6.an            \n";
         cout<<"\n";
     }
-void SirulUnitatiTimp(char Sir[4],int numar)
+void SirulUnitatiTimp(char Sir[10],int numar)
     {
        switch(numar)
             {
@@ -778,7 +778,7 @@ void PrelucrareRezultatTimp(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatTimp(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatTimp(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -832,7 +832,7 @@ void AfisareRezultatTimp(int index,char SirUnitati[4],double ValoareaInitiala,do
 void MeniuTimp()
     {
         int index,index2,index3;
-        char SirUnitati[5];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -879,7 +879,7 @@ void Viteza()
         cout<<"                              7.fps-Picioare pe secunda (Feet per sec)\n";
         cout<<"\n";
     }
-void SirulUnitatiViteza(char Sir[4],int numar)
+void SirulUnitatiViteza(char Sir[10],int numar)
     {
        switch(numar)
             {
@@ -960,7 +960,7 @@ void PrelucrareRezultatViteza(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatViteza(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatViteza(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -1021,7 +1021,7 @@ void AfisareRezultatViteza(int index,char SirUnitati[4],double ValoareaInitiala,
 void MeniuViteza()
     {
         int index,index2,index3;
-        char SirUnitati[5];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -1065,7 +1065,7 @@ void Temperatura()
         cout<<"                              4.R"<<(char)248<<"-Grade rankine        \n";
         cout<<"\n";
     }
-void SirulUnitatiTemp(char Sir[4],int numar)
+void SirulUnitatiTemp(char Sir[10],int numar)
     {
         char b[2]={(char)248};
        switch(numar)
@@ -1124,7 +1124,7 @@ void PrelucrareRezultatTemp(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatTemp(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatTemp(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -1164,7 +1164,7 @@ void AfisareRezultatTemp(int index,char SirUnitati[4],double ValoareaInitiala,do
 void MeniuTemperatura()
     {
         int index,index2,index3;
-        char SirUnitati[5];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -1208,7 +1208,7 @@ void Masa()
         cout<<"                              3.lb-Funte(pound)       6.t-Tona        \n";
         cout<<"\n";
     }
-void SirulUnitatiMasa(char Sir[4],int numar)
+void SirulUnitatiMasa(char Sir[10],int numar)
     {
        switch(numar)
             {
@@ -1280,7 +1280,7 @@ void PrelucrareRezultatMasa(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatMasa(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatMasa(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -1334,7 +1334,7 @@ void AfisareRezultatMasa(int index,char SirUnitati[4],double ValoareaInitiala,do
 void MeniuMasa()
     {
         int index,index2,index3;
-        char SirUnitati[5];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -1368,7 +1368,7 @@ void MeniuMasa()
     }
 void Energie()
     {
-        cout<<"                              ################LUNGIME#################\n";
+        cout<<"                              ################ENERGIE#################\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
@@ -1378,7 +1378,7 @@ void Energie()
         cout<<"                              4.J-Joule           8.Kcal-Kilocalorie  \n";
         cout<<"\n";
     }
-void SirulUnitatiEnergie(char Sir[4],int numar)
+void SirulUnitatiEnergie(char Sir[10],int numar)
     {
        switch(numar)
             {
@@ -1468,7 +1468,7 @@ void PrelucrareRezultatEnergie(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
-void AfisareRezultatEnergie(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+void AfisareRezultatEnergie(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
         cout<<"\n";
         cout<<"\n";
@@ -1536,7 +1536,7 @@ void AfisareRezultatEnergie(int index,char SirUnitati[4],double ValoareaInitiala
 void MeniuEnergie()
     {
         int index,index2,index3;
-        char SirUnitati[5];
+        char SirUnitati[10];
         double ValoareaInitiala,ValoareaRezultata,copie;
         do
             {
@@ -1552,6 +1552,211 @@ void MeniuEnergie()
                 PrelucrareRezultatEnergie(index2,ValoareaRezultata,copie);
                 system ("cls");
                 AfisareRezultatEnergie(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
+void Presiune()
+    {
+        cout<<"                              ###############PRESIUNE#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.at-Atmosfera tehnica   5.N/m"<<(char)253<<"-Newton     \n";
+        cout<<"                              2.atm-Atmosfera standard 6.Pa-Pascal    \n";
+        cout<<"                              3.bar-Bar                7.Torr-Torr    \n";
+        cout<<"                              4.mmHG-Milimetri         8.PSI-funte pe \n";
+        cout<<"                              coloana de mercur        tol patrat     \n";
+        cout<<"\n";
+    }
+void SirulUnitatiPresiune(char Sir[10],int numar)
+    {
+        char b[2]={(char)253};
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"at");
+                    break;
+                case 2:
+                    strcpy(Sir,"atm");
+                    break;
+                case 3:
+                    strcpy(Sir,"bar");
+                    break;
+                case 4:
+                    strcpy(Sir,"mmHG");
+                    break;
+                case 5:
+                    strcpy(Sir,"N/m");
+                    strcat(Sir,b);
+                    break;
+                case 6:
+                    strcpy(Sir,"Pa");
+                    break;
+                case 7:
+                    strcpy(Sir,"Torr");
+                    break;
+                case 8:
+                    strcpy(Sir,"PSI");
+                    break;
+            }
+    }
+void PrelucrareRezultatAT(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare*1;
+                    break;
+                case 2:
+                    Valoare=Valoare*1.0332;
+                    break;
+                case 3:
+                    Valoare=Valoare*0.9993;
+                    break;
+                case 4:
+                    Valoare=Valoare*0.0013;
+                    break;
+                case 5:
+                    Valoare=Valoare*0.00001;
+                    break;
+                case 6:
+                    Valoare=Valoare*0.00001;
+                    break;
+                case 7:
+                    Valoare=Valoare*0.0013;
+                    break;
+                case 8:
+                    Valoare=Valoare*0.0703;
+                    break;
+            }
+    }
+void PrelucrareRezultatPresiune(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1;
+                    break;
+                case 2:
+                    Rezultat=Valoare*0.9678;
+                    break;
+                case 3:
+                    Rezultat=Valoare*1.0007;
+                    break;
+                case 4:
+                    Rezultat=Valoare*735.559;
+                    break;
+                case 5:
+                    Rezultat=Valoare*98066.5;
+                    break;
+                case 6:
+                    Rezultat=Valoare*98066.5;
+                    break;
+                case 7:
+                    Rezultat=Valoare*735.559;
+                    break;
+                case 8:
+                    Rezultat=Valoare*14.2233;
+                    break;
+            }
+    }
+void AfisareRezultatPresiune(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" at >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" atm >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" bar >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mmHG >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" N/m"<<(char)253<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" Pa >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" Torr >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 8:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" PSI >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuPresiune()
+    {
+        int index,index2,index3;
+        char SirUnitati[10];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Presiune();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiPresiune(SirUnitati,index2);
+                PrelucrareRezultatAT(index,copie);
+                PrelucrareRezultatPresiune(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatPresiune(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
                 std::cout << std::fixed;
                 cout<<"\n";
                 MeniuExit();
@@ -1611,7 +1816,7 @@ void MeniuPrincipal()
                                 break;
                             case 9:
                                 system("cls");
-                                cout<<"test9 \n";
+                                MeniuPresiune();
                                 break;
                             case 10:
                                 system("cls");
