@@ -58,7 +58,7 @@ double GetInputValoare()
     }
 void Lungime()
     {
-        cout<<"                              ################Lungime#################\n";
+        cout<<"                              ################LUNGIME#################\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
@@ -297,7 +297,7 @@ void MeniuLungime()
     }
 void Arie()
     {
-        cout<<"                              ##################Aria##################\n";
+        cout<<"                              ##################ARIA##################\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
@@ -495,7 +495,7 @@ void MeniuArie()
     }
 void Volum()
     {
-        cout<<"                              ################Lungime#################\n";
+        cout<<"                              #################VOLUM##################\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
@@ -698,7 +698,7 @@ void MeniuVolum()
     }
 void Timp()
     {
-        cout<<"                              ################Lungime#################\n";
+        cout<<"                              ##################TIMP##################\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
@@ -866,7 +866,7 @@ void MeniuTimp()
     }
 void Viteza()
     {
-        cout<<"                              ################Lungime#################\n";
+        cout<<"                              #################VITEZA#################\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
@@ -1055,7 +1055,7 @@ void MeniuViteza()
     }
 void Temperatura()
     {
-        cout<<"                              ################Lungime#################\n";
+        cout<<"                              ##############TEMPERATURA###############\n";
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
