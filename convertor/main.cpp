@@ -1196,6 +1196,175 @@ void MeniuTemperatura()
                     }
             }while(index3!=2);
     }
+void Masa()
+    {
+
+        cout<<"                              ##################MASA##################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.g-Grame               4.mg-Miligrame  \n";
+        cout<<"                              2.kg-Kilograme          5.Slug          \n";
+        cout<<"                              3.lb-Funte(pound)       6.t-Tona        \n";
+        cout<<"\n";
+    }
+void SirulUnitatiMasa(char Sir[4],int numar)
+    {
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"g");
+                    break;
+                case 2:
+                    strcpy(Sir,"kg");
+                    break;
+                case 3:
+                    strcpy(Sir,"lb");
+                    break;
+                case 4:
+                    strcpy(Sir,"mg");
+                    break;
+                case 5:
+                    strcpy(Sir,"Slug");
+                    break;
+                case 6:
+                    strcpy(Sir,"t");
+                    break;
+            }
+    }
+void PrelucrareRezultatGr(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare*1;
+                    break;
+                case 2:
+                    Valoare=Valoare*1000;
+                    break;
+                case 3:
+                    Valoare=Valoare*453.592;
+                    break;
+                case 4:
+                    Valoare=Valoare/1000;
+                    break;
+                case 5:
+                    Valoare=Valoare*14593.9;
+                    break;
+                case 6:
+                    Valoare=Valoare*1000000;
+                    break;
+            }
+    }
+void PrelucrareRezultatMasa(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1;
+                    break;
+                case 2:
+                    Rezultat=Valoare/1000;
+                    break;
+                case 3:
+                    Rezultat=Valoare*0.0022;
+                    break;
+                case 4:
+                    Rezultat=Valoare*1000;
+                    break;
+                case 5:
+                    Rezultat=Valoare*0.00007;
+                    break;
+                case 6:
+                    Rezultat=Valoare/1000000;
+            }
+    }
+void AfisareRezultatMasa(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" g >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kg >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" lb >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mg >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" Slug >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" t >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuMasa()
+    {
+        int index,index2,index3;
+        char SirUnitati[5];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Masa();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiMasa(SirUnitati,index2);
+                PrelucrareRezultatGr(index,copie);
+                PrelucrareRezultatMasa(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatMasa(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -1231,7 +1400,7 @@ void MeniuPrincipal()
                                 break;
                             case 7:
                                 system("cls");
-                                cout<<"test7 \n";
+                                MeniuMasa();
                                 break;
                             case 8:
                                 system("cls");
