@@ -696,6 +696,174 @@ void MeniuVolum()
                     }
             }while(index3!=2);
     }
+void Timp()
+    {
+        cout<<"                              ################Lungime#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.ms-Milisecunda        4.h-Ora         \n";
+        cout<<"                              2.s-Secunda             5.zi            \n";
+        cout<<"                              3.min-Minut             6.an            \n";
+        cout<<"\n";
+    }
+void SirulUnitatiTimp(char Sir[4],int numar)
+    {
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"ms");
+                    break;
+                case 2:
+                    strcpy(Sir,"s");
+                    break;
+                case 3:
+                    strcpy(Sir,"min");
+                    break;
+                case 4:
+                    strcpy(Sir,"h");
+                    break;
+                case 5:
+                    strcpy(Sir,"zi");
+                    break;
+                case 6:
+                    strcpy(Sir,"an");
+                    break;
+            }
+    }
+void PrelucrareRezultatSec(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare/1000;
+                    break;
+                case 2:
+                    Valoare=Valoare*1;
+                    break;
+                case 3:
+                    Valoare=Valoare*60;
+                    break;
+                case 4:
+                    Valoare=Valoare*3600;
+                    break;
+                case 5:
+                    Valoare=Valoare*86400;
+                    break;
+                case 6:
+                    Valoare=Valoare*31536000;
+                    break;
+            }
+    }
+void PrelucrareRezultatTimp(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1000;
+                    break;
+                case 2:
+                    Rezultat=Valoare*1;
+                    break;
+                case 3:
+                    Rezultat=Valoare*0.016666;
+                    break;
+                case 4:
+                    Rezultat=Valoare*0.000277;
+                    break;
+                case 5:
+                    Rezultat=Valoare*0.0000115;
+                    break;
+                case 6:
+                    Rezultat=0;
+            }
+    }
+void AfisareRezultatTimp(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" ms >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" s >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" min >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" h >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" zi >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" an >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuTimp()
+    {
+        int index,index2,index3;
+        char SirUnitati[5];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Timp();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiTimp(SirUnitati,index2);
+                PrelucrareRezultatSec(index,copie);
+                PrelucrareRezultatTimp(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatTimp(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -719,7 +887,7 @@ void MeniuPrincipal()
                                 break;
                             case 4:
                                 system("cls");
-                                cout<<"test4 \n";
+                                MeniuTimp();
                                 break;
                             case 5:
                                 system("cls");
