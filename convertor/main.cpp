@@ -2004,6 +2004,213 @@ void MeniuDensitate()
                     }
             }while(index3!=2);
     }
+void ConsumCombustibil()
+    {
+        cout<<"                              ##############DENSITATE#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.l/100km-Litri la o suta de kilometri  \n";
+        cout<<"                              2.km/l-Kilometru pe litru               \n";
+        cout<<"                              3.mi/gal-Mile pe galon                  \n";
+        cout<<"                              4.gal/100mi-Galoane la o suta de mile   \n";
+        cout<<"                              5.UK mi/gal-Mile pe galonul englezesc   \n";
+        cout<<"                              6.UK gal/100mi-Galoane englezesti       \n";
+        cout<<"                                             la o suta de mile        \n";
+        cout<<"                              7.mi/l-Mile pe litru                    \n";
+        cout<<"                              8.l/100mi-Litri la o suta de mile       \n";
+        cout<<"\n";
+    }
+void SirulUnitatiConsumC(char Sir[20],int numar)
+    {
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"l/100km");
+                    break;
+                case 2:
+                    strcpy(Sir,"km/l");
+                    break;
+                case 3:
+                    strcpy(Sir,"mi/gal");
+                    break;
+                case 4:
+                    strcpy(Sir,"gal/100mi");
+                    break;
+                case 5:
+                    strcpy(Sir,"UK mi/gal");
+                    break;
+                case 6:
+                    strcpy(Sir,"UK gal/100mi");
+                    break;
+                case 7:
+                    strcpy(Sir,"mi/l");
+                    break;
+                case 8:
+                    strcpy(Sir,"l/100mi");
+                    break;
+            }
+    }
+void PrelucrareRezultatCONS(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare*1;
+                    break;
+                case 2:
+                    Valoare=Valoare*100;
+                    break;
+                case 3:
+                    Valoare=Valoare*235.2;
+                    break;
+                case 4:
+                    Valoare=Valoare*2.352;
+                    break;
+                case 5:
+                    Valoare=Valoare*282.5;
+                    break;
+                case 6:
+                    Valoare=Valoare*2.825;
+                    break;
+                case 7:
+                    Valoare=Valoare*62.14;
+                    break;
+                case 8:
+                    Valoare=Valoare*0.6214;
+                    break;
+            }
+    }
+void PrelucrareRezultatConsumC(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1;
+                    break;
+                case 2:
+                    Rezultat=Valoare*100;
+                    break;
+                case 3:
+                    Rezultat=Valoare*235.2;
+                    break;
+                case 4:
+                    Rezultat=Valoare*0.4251;
+                    break;
+                case 5:
+                    Rezultat=Valoare*282.5;
+                    break;
+                case 6:
+                    Rezultat=Valoare*0.354;
+                    break;
+                case 7:
+                    Rezultat=Valoare*62.14;
+                    break;
+                case 8:
+                    Rezultat=Valoare*1.609;
+                    break;
+            }
+    }
+void AfisareRezultatConsumC(int index,char SirUnitati[20],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" l/100km >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" km/l >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mi/gal >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" gal/100mi >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" UK mi/gal >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" UK gal/100mi >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mi/l >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 8:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" l/100mi >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuConsumC()
+    {
+        int index,index2,index3;
+        char SirUnitati[20];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                ConsumCombustibil();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiConsumC(SirUnitati,index2);
+                PrelucrareRezultatCONS(index,copie);
+                PrelucrareRezultatConsumC(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatConsumC(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -2055,7 +2262,7 @@ void MeniuPrincipal()
                                 break;
                             case 11:
                                 system("cls");
-                                cout<<"test11 \n";
+                                MeniuConsumC();
                                 break;
                             case 12:
                                 system("cls");
