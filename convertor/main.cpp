@@ -702,9 +702,9 @@ void Timp()
         cout<<"                                                                      \n";
         cout<<"                                Legenda:                              \n";
         cout<<"                                                                      \n";
-        cout<<"                              1.ms-Milisecunda        4.h-Ora         \n";
-        cout<<"                              2.s-Secunda             5.zi            \n";
-        cout<<"                              3.min-Minut             6.an            \n";
+        cout<<"                              1.s-Secunda             4.zi            \n";
+        cout<<"                              2.min-Minut             5.luna          \n";
+        cout<<"                              3.h-Ora                 6.an            \n";
         cout<<"\n";
     }
 void SirulUnitatiTimp(char Sir[4],int numar)
@@ -712,46 +712,46 @@ void SirulUnitatiTimp(char Sir[4],int numar)
        switch(numar)
             {
                 case 1:
-                    strcpy(Sir,"ms");
-                    break;
-                case 2:
                     strcpy(Sir,"s");
                     break;
-                case 3:
+                case 2:
                     strcpy(Sir,"min");
                     break;
-                case 4:
+                case 3:
                     strcpy(Sir,"h");
                     break;
-                case 5:
+                case 4:
                     strcpy(Sir,"zi");
+                    break;
+                case 5:
+                    strcpy(Sir,"luna");
                     break;
                 case 6:
                     strcpy(Sir,"an");
                     break;
             }
     }
-void PrelucrareRezultatSec(int index,double &Valoare)
+void PrelucrareRezultatOre(int index,double &Valoare)
     {
         switch(index)
             {
                 case 1:
-                    Valoare=Valoare/1000;
+                    Valoare=Valoare*0.000277;
                     break;
                 case 2:
-                    Valoare=Valoare*1;
+                    Valoare=Valoare*0.016666;
                     break;
                 case 3:
-                    Valoare=Valoare*60;
+                    Valoare=Valoare*1;
                     break;
                 case 4:
-                    Valoare=Valoare*3600;
+                    Valoare=Valoare*24;
                     break;
                 case 5:
-                    Valoare=Valoare*86400;
+                    Valoare=Valoare*730.48;
                     break;
                 case 6:
-                    Valoare=Valoare*31536000;
+                    Valoare=Valoare*8765,81;
                     break;
             }
     }
@@ -760,22 +760,22 @@ void PrelucrareRezultatTimp(int index,double &Rezultat,double Valoare)
        switch(index)
             {
                 case 1:
-                    Rezultat=Valoare*1000;
+                    Rezultat=Valoare*3600;
                     break;
                 case 2:
-                    Rezultat=Valoare*1;
+                    Rezultat=Valoare*60;
                     break;
                 case 3:
-                    Rezultat=Valoare*0.016666;
+                    Rezultat=Valoare*1;
                     break;
                 case 4:
-                    Rezultat=Valoare*0.000277;
+                    Rezultat=Valoare*0,04166;
                     break;
                 case 5:
-                    Rezultat=Valoare*0.0000115;
+                    Rezultat=Valoare*0,00136;
                     break;
                 case 6:
-                    Rezultat=0;
+                    Rezultat=Valoare*0,000114;
             }
     }
 void AfisareRezultatTimp(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
@@ -788,35 +788,35 @@ void AfisareRezultatTimp(int index,char SirUnitati[4],double ValoareaInitiala,do
                     case 1:
                         cout<<"                                 ";
                         AfisarePrecizie(ValoareaInitiala);
-                        cout<<" ms >>> ";
+                        cout<<" s >>> ";
                         AfisarePrecizie(ValoareaRezultata);
                         cout<<" "<<SirUnitati<<"\n";
                         break;
                     case 2:
                         cout<<"                                 ";
                         AfisarePrecizie(ValoareaInitiala);
-                        cout<<" s >>> ";
+                        cout<<" min >>> ";
                         AfisarePrecizie(ValoareaRezultata);
                         cout<<" "<<SirUnitati<<"\n";
                         break;
                     case 3:
                         cout<<"                                 ";
                         AfisarePrecizie(ValoareaInitiala);
-                        cout<<" min >>> ";
+                        cout<<" h >>> ";
                         AfisarePrecizie(ValoareaRezultata);
                         cout<<" "<<SirUnitati<<"\n";
                         break;
                     case 4:
                         cout<<"                                 ";
                         AfisarePrecizie(ValoareaInitiala);
-                        cout<<" h >>> ";
+                        cout<<" zi >>> ";
                         AfisarePrecizie(ValoareaRezultata);
                         cout<<" "<<SirUnitati<<"\n";
                         break;
                     case 5:
                         cout<<"                                 ";
                         AfisarePrecizie(ValoareaInitiala);
-                        cout<<" zi >>> ";
+                        cout<<" luna >>> ";
                         AfisarePrecizie(ValoareaRezultata);
                         cout<<" "<<SirUnitati<<"\n";
                         break;
@@ -844,10 +844,199 @@ void MeniuTimp()
                 copie=ValoareaInitiala;
                 cout<<"\n";
                 SirulUnitatiTimp(SirUnitati,index2);
-                PrelucrareRezultatSec(index,copie);
+                PrelucrareRezultatOre(index,copie);
                 PrelucrareRezultatTimp(index2,ValoareaRezultata,copie);
                 system ("cls");
                 AfisareRezultatTimp(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
+void Viteza()
+    {
+        cout<<"                              ################Lungime#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.cm/s-Centimetru pe secunda            \n";
+        cout<<"                              2.m/s-Metru pe secunda                  \n";
+        cout<<"                              3.mps-Mile pe secunda                   \n";
+        cout<<"                              4.mph-Mile pe ora                       \n";
+        cout<<"                              5.km/h-Kilometru pe ora                 \n";
+        cout<<"                              6.km/s-Kilometru pe secunda             \n";
+        cout<<"                              7.fps-Picioare pe secunda (Feet per sec)\n";
+        cout<<"\n";
+    }
+void SirulUnitatiViteza(char Sir[4],int numar)
+    {
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"cm/s");
+                    break;
+                case 2:
+                    strcpy(Sir,"m/s");
+                    break;
+                case 3:
+                    strcpy(Sir,"mps");
+                    break;
+                case 4:
+                    strcpy(Sir,"mph");
+                    break;
+                case 5:
+                    strcpy(Sir,"km/h");
+                    break;
+                case 6:
+                    strcpy(Sir,"km/s");
+                    break;
+                case 7:
+                    strcpy(Sir,"fps");
+                    break;
+            }
+    }
+void PrelucrareRezultatMPS(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare/100;
+                    break;
+                case 2:
+                    Valoare=Valoare/1;
+                    break;
+                case 3:
+                    Valoare=Valoare*1609.344;
+                    break;
+                case 4:
+                    Valoare=Valoare*0.447;
+                    break;
+                case 5:
+                    Valoare=Valoare*0.2778;
+                    break;
+                case 6:
+                    Valoare=Valoare*1000;
+                    break;
+                case 7:
+                    Valoare=Valoare*0.3048;
+                    break;
+            }
+    }
+void PrelucrareRezultatViteza(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*100;
+                    break;
+                case 2:
+                    Rezultat=Valoare*1;
+                    break;
+                case 3:
+                    Rezultat=Valoare*0.0006;
+                    break;
+                case 4:
+                    Rezultat=Valoare*2.2369;
+                    break;
+                case 5:
+                    Rezultat=Valoare*3.6;
+                    break;
+                case 6:
+                    Rezultat=Valoare/1000;
+                    break;
+                case 7:
+                    Rezultat=Valoare*3.2808;
+                    break;
+            }
+    }
+void AfisareRezultatViteza(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" cm/s >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" m/s >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mps >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mph >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" km/h >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" km/s >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" fps >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuViteza()
+    {
+        int index,index2,index3;
+        char SirUnitati[5];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Viteza();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiViteza(SirUnitati,index2);
+                PrelucrareRezultatMPS(index,copie);
+                PrelucrareRezultatViteza(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatViteza(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
                 std::cout << std::fixed;
                 cout<<"\n";
                 MeniuExit();
@@ -891,7 +1080,7 @@ void MeniuPrincipal()
                                 break;
                             case 5:
                                 system("cls");
-                                cout<<"test5 \n";
+                                MeniuViteza();
                                 break;
                             case 6:
                                 system("cls");
