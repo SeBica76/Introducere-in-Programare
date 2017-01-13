@@ -1053,6 +1053,149 @@ void MeniuViteza()
                     }
             }while(index3!=2);
     }
+void Temperatura()
+    {
+        cout<<"                              ################Lungime#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.C"<<(char)248<<"-Grade celsius        \n";
+        cout<<"                              2.F"<<(char)248<<"-Grade fahrenheit     \n";
+        cout<<"                              3.K"<<(char)248<<"-Grade kelvin         \n";
+        cout<<"                              4.R"<<(char)248<<"-Grade rankine        \n";
+        cout<<"\n";
+    }
+void SirulUnitatiTemp(char Sir[4],int numar)
+    {
+        char b[2]={(char)248};
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"C");
+                    strcat(Sir,b);
+                    break;
+                case 2:
+                    strcpy(Sir,"F");
+                    strcat(Sir,b);
+                    break;
+                case 3:
+                    strcpy(Sir,"K");
+                    strcat(Sir,b);
+                    break;
+                case 4:
+                    strcpy(Sir,"R");
+                    strcat(Sir,b);
+                    break;
+            }
+    }
+void PrelucrareRezultatCel(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare*1;
+                    break;
+                case 2:
+                    Valoare=Valoare*(-17.2222);
+                    break;
+                case 3:
+                    Valoare=Valoare*(-272.15);
+                    break;
+                case 4:
+                    Valoare=Valoare*(-272.6);
+                    break;
+            }
+    }
+void PrelucrareRezultatTemp(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1;
+                    break;
+                case 2:
+                    Rezultat=Valoare*33.8;
+                    break;
+                case 3:
+                    Rezultat=Valoare*274.15;
+                    break;
+                case 4:
+                    Rezultat=Valoare*493.47;
+                    break;
+            }
+    }
+void AfisareRezultatTemp(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" C"<<(char)248<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" F"<<(char)248<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" K"<<(char)248<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" R"<<(char)248<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuTemperatura()
+    {
+        int index,index2,index3;
+        char SirUnitati[5];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Temperatura();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiTemp(SirUnitati,index2);
+                PrelucrareRezultatCel(index,copie);
+                PrelucrareRezultatTemp(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatTemp(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -1084,7 +1227,7 @@ void MeniuPrincipal()
                                 break;
                             case 6:
                                 system("cls");
-                                cout<<"test6 \n";
+                                MeniuTemperatura();
                                 break;
                             case 7:
                                 system("cls");
