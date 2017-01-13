@@ -13,7 +13,7 @@ int GetInput()
         cout<<"                       Your choice: ";cin>>choice;
         return choice;
     }
-void MeniuPrincipal()
+void MeniuPrincipalAfisare()
     {
         cout<<"                     #####Convertor######\n";
        	cout<<"                     #                  #\n";
@@ -242,14 +242,32 @@ void PrelucrareRezultat(int index,double &Rezultat,double Valoare)
                     break;
             }
     }
+int GetInPutExit()
+    {
+        int choice;
+        cin>>choice;
+        return choice;
+    }
+void MeniuExit()
+    {
+        cout<<"                                 \n";
+        cout<<"                                 \n";
+        cout<<"                                 ";cout<<"Apasati:\n";
+        cout<<"                                 ";cout<<"    1-Pentru a introduce alte valori;\n";
+        cout<<"                                 ";cout<<"    2-Pentru a reveni la meniul principal;\n";
+        cout<<"                                 ";cout<<"    3-Pentru a iesi din program.\n";
+        cout<<"\n";
+        cout<<"                                 ";cout<<"      Alegerea dvs.:";
+
+    }
 void MeniuLungime()
     {
-        int index,index2;
+        int index,index2,index3;
         char SirUnitati[4];
         double ValoareaInitiala,ValoareaRezultata,copie;
-        Lungime();
         do
             {
+                Lungime();
                 index=GetInputUnitati1();
                 index2=GetInputUnitati2();
                 cout<<"\n";
@@ -263,70 +281,88 @@ void MeniuLungime()
                 AfisareRezultat(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
                 std::cout << std::fixed;
                 cout<<"\n";
-            }while(index!=10);
-    }
-int main()
-{
-    unsigned c=0;
-    MeniuPrincipal();
-    do
-        {
-           c=GetInput();
-           switch(c)
-                {
-                    case 1:
-                            system("cls");
-                            MeniuLungime();
-                            break;
-                    case 2:
-                            system("cls");
-                            cout<<"test2 \n";
-                            break;
-                    case 3:
-                            system("cls");
-                            cout<<"test3 \n";
-                            break;
-                    case 4:
-                            system("cls");
-                            cout<<"test4 \n";
-                            break;
-                    case 5:
-                            system("cls");
-                            cout<<"test5 \n";
-                            break;
-                    case 6:
-                            system("cls");
-                            cout<<"test6 \n";
-                            break;
-                    case 7:
-                            system("cls");
-                            cout<<"test7 \n";
-                            break;
-                    case 8:
-                            system("cls");
-                            cout<<"test8 \n";
-                            break;
-                    case 9:
-                            system("cls");
-                            cout<<"test9 \n";
-                            break;
-                    case 10:
-                            system("cls");
-                            cout<<"test10 \n";
-                            break;
-                    case 11:
-                            system("cls");
-                            cout<<"test11 \n";
-                            break;
-                    case 12:
-                            system("cls");
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
                             cout <<"\n                            Goodbye!\n";
                             exit('exit');
                             break;
-                    default:
+                        case 2:
                             break;
+                    }
+            }while(index3!=2);
+    }
+void MeniuPrincipal()
+    {
+        unsigned c=0;
+        do
+            {
+                MeniuPrincipalAfisare();
+                c=GetInput();
+                    switch(c)
+                        {
+                            case 1:
+                                system("cls");
+                                MeniuLungime();
+                                break;
+                            case 2:
+                                system("cls");
+                                cout<<"test2 \n";
+                                break;
+                            case 3:
+                                system("cls");
+                                cout<<"test3 \n";
+                                break;
+                            case 4:
+                                system("cls");
+                                cout<<"test4 \n";
+                                break;
+                            case 5:
+                                system("cls");
+                                cout<<"test5 \n";
+                                break;
+                            case 6:
+                                system("cls");
+                                cout<<"test6 \n";
+                                break;
+                            case 7:
+                                system("cls");
+                                cout<<"test7 \n";
+                                break;
+                            case 8:
+                                system("cls");
+                                cout<<"test8 \n";
+                                break;
+                            case 9:
+                                system("cls");
+                                cout<<"test9 \n";
+                                break;
+                            case 10:
+                                system("cls");
+                                cout<<"test10 \n";
+                                break;
+                            case 11:
+                                system("cls");
+                                cout<<"test11 \n";
+                                break;
+                            case 12:
+                                system("cls");
+                                cout <<"\n                            Goodbye!\n";
+                                exit('exit');
+                                break;
+                            default:
+                                system("cls");
+                                break;
                    }
         }while(c!=12);
     system("PAUSE");
+    }
+
+int main()
+{
+    MeniuPrincipal();
     return 0;
 }
