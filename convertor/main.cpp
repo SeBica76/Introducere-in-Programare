@@ -658,7 +658,6 @@ void AfisareRezultatVolum(int index,char SirUnitati[4],double ValoareaInitiala,d
                         AfisarePrecizie(ValoareaRezultata);
                         cout<<" "<<SirUnitati<<"\n";
                         break;
-                        break;
                 }
     }
 void MeniuVolum()
@@ -776,6 +775,7 @@ void PrelucrareRezultatTimp(int index,double &Rezultat,double Valoare)
                     break;
                 case 6:
                     Rezultat=Valoare*0,000114;
+                    break;
             }
     }
 void AfisareRezultatTimp(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
@@ -1277,6 +1277,7 @@ void PrelucrareRezultatMasa(int index,double &Rezultat,double Valoare)
                     break;
                 case 6:
                     Rezultat=Valoare/1000000;
+                    break;
             }
     }
 void AfisareRezultatMasa(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
@@ -1365,6 +1366,208 @@ void MeniuMasa()
                     }
             }while(index3!=2);
     }
+void Energie()
+    {
+        cout<<"                              ################LUNGIME#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.Wh-Watt-ora           5.kJ-Kilojoule  \n";
+        cout<<"                              2.kWh-Kilowatt-ora      6.MJ-Megajoule  \n";
+        cout<<"                              3.MWh-Megawatt-ora      7.cal-Calorie   \n";
+        cout<<"                              4.J-Joule           8.Kcal-Kilocalorie  \n";
+        cout<<"\n";
+    }
+void SirulUnitatiEnergie(char Sir[4],int numar)
+    {
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"Wh");
+                    break;
+                case 2:
+                    strcpy(Sir,"kWh");
+                    break;
+                case 3:
+                    strcpy(Sir,"MWh");
+                    break;
+                case 4:
+                    strcpy(Sir,"J");
+                    break;
+                case 5:
+                    strcpy(Sir,"kJ");
+                    break;
+                case 6:
+                    strcpy(Sir,"MJ");
+                    break;
+                case 7:
+                    strcpy(Sir,"cal");
+                    break;
+                case 8:
+                    strcpy(Sir,"kcal");
+                    break;
+            }
+    }
+void PrelucrareRezultatWatt(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare*1;
+                    break;
+                case 2:
+                    Valoare=Valoare*1000;
+                    break;
+                case 3:
+                    Valoare=Valoare*1000000;
+                    break;
+                case 4:
+                    Valoare=Valoare*0.000278;
+                    break;
+                case 5:
+                    Valoare=Valoare*0.278;
+                    break;
+                case 6:
+                    Valoare=Valoare*278;
+                    break;
+                case 7:
+                    Valoare=Valoare*0.001163;
+                    break;
+                case 8:
+                    Valoare=Valoare*1.163;
+                    break;
+            }
+    }
+void PrelucrareRezultatEnergie(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1;
+                    break;
+                case 2:
+                    Rezultat=Valoare/1000;
+                    break;
+                case 3:
+                    Rezultat=Valoare/1000000;
+                    break;
+                case 4:
+                    Rezultat=Valoare*3600;
+                    break;
+                case 5:
+                    Rezultat=Valoare*3.6;
+                    break;
+                case 6:
+                    Rezultat=Valoare*0.0036;
+                    break;
+                case 7:
+                    Rezultat=Valoare*859.8;
+                    break;
+                case 8:
+                    Rezultat=Valoare*0.8598;
+                    break;
+            }
+    }
+void AfisareRezultatEnergie(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" Wh >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kWh >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" MWh >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" J >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kJ >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" MJ >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" cal >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 8:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kcal >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuEnergie()
+    {
+        int index,index2,index3;
+        char SirUnitati[5];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Energie();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiEnergie(SirUnitati,index2);
+                PrelucrareRezultatWatt(index,copie);
+                PrelucrareRezultatEnergie(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatEnergie(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -1404,7 +1607,7 @@ void MeniuPrincipal()
                                 break;
                             case 8:
                                 system("cls");
-                                cout<<"test8 \n";
+                                MeniuEnergie();
                                 break;
                             case 9:
                                 system("cls");
