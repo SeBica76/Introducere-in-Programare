@@ -1088,41 +1088,54 @@ void SirulUnitatiTemp(char Sir[10],int numar)
                     break;
             }
     }
-void PrelucrareRezultatCel(int index,double &Valoare)
+void PrelucrareRezultatTemperatura(int index1,int index2, double &Rezultat,double Val)
     {
-        switch(index)
-            {
-                case 1:
-                    Valoare=Valoare*1;
-                    break;
-                case 2:
-                    Valoare=Valoare*(-17.2222);
-                    break;
-                case 3:
-                    Valoare=Valoare*(-272.15);
-                    break;
-                case 4:
-                    Valoare=Valoare*(-272.6);
-                    break;
-            }
-    }
-void PrelucrareRezultatTemp(int index,double &Rezultat,double Valoare)
-    {
-       switch(index)
-            {
-                case 1:
-                    Rezultat=Valoare*1;
-                    break;
-                case 2:
-                    Rezultat=Valoare*33.8;
-                    break;
-                case 3:
-                    Rezultat=Valoare*274.15;
-                    break;
-                case 4:
-                    Rezultat=Valoare*493.47;
-                    break;
-            }
+        if(index1==1)
+            if(index2==1)
+                Rezultat=Val;
+            else
+                if(index2==2)
+                    Rezultat=Val*33.8;
+                else
+                    if(index2==3)
+                        Rezultat=Val*274.15;
+                    else
+                        Rezultat=Val*493.47;
+        else
+            if(index1==2)
+                if(index2==1)
+                    Rezultat=Val*(-17.22);
+                else
+                    if(index2==2)
+                        Rezultat=Val;
+                    else
+                        if(index2==3)
+                            Rezultat=Val*255.93;
+                        else
+                            Rezultat=Val*460.67;
+            else
+                if(index1==3)
+                    if(index2==1)
+                        Rezultat=Val*(-272.15);
+                    else
+                        if(index2==2)
+                            Rezultat=Val*(-457.87);
+                    else
+                        if(index2==3)
+                            Rezultat=Val;
+                    else
+                            Rezultat=Val*1.8;
+                else
+                    if(index2==1)
+                        Rezultat=Val*(-272.59);
+                    else
+                        if(index2==2)
+                            Rezultat=Val*(-458.67);
+                    else
+                        if(index2==3)
+                            Rezultat=Val*0.56;
+                    else
+                            Rezultat=Val;
     }
 void AfisareRezultatTemp(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
     {
@@ -1176,8 +1189,7 @@ void MeniuTemperatura()
                 copie=ValoareaInitiala;
                 cout<<"\n";
                 SirulUnitatiTemp(SirUnitati,index2);
-                PrelucrareRezultatCel(index,copie);
-                PrelucrareRezultatTemp(index2,ValoareaRezultata,copie);
+                PrelucrareRezultatTemperatura(index,index2,ValoareaRezultata,ValoareaInitiala);
                 system ("cls");
                 AfisareRezultatTemp(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
                 std::cout << std::fixed;
