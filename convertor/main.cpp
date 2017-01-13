@@ -1773,6 +1773,237 @@ void MeniuPresiune()
                     }
             }while(index3!=2);
     }
+void Densitate()
+    {
+        cout<<"                              ##############DENSITATE#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.mg/cm"<<(char)252<<"-Miligram pe centimetru cub\n";
+        cout<<"                              2.mg/l-Miligram pe litru\n";
+        cout<<"                              3.mg/m"<<(char)252<<"-Miligram pe metru cub\n";
+        cout<<"                              4.g/cm"<<(char)252<<"-Gram pe centimetru cub\n";
+        cout<<"                              5.g/l-Gram pe litru\n";
+        cout<<"                              6.g/m"<<(char)252<<"-Gram pe metru cub\n";
+        cout<<"                              7.kg/cm"<<(char)252<<"-Kilogram pe centimetru cub\n";
+        cout<<"                              8.kg/l-Kilogram pe litru\n";
+        cout<<"                              9.kg/m"<<(char)252<<"-Kilogram pe metru cub\n";
+        cout<<"\n";
+    }
+void SirulUnitatiDensitate(char Sir[10],int numar)
+    {
+        char b[2]={(char)252};
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"mg/cm");
+                    strcat(Sir,b);
+                    break;
+                case 2:
+                    strcpy(Sir,"mg/l");
+                    break;
+                case 3:
+                    strcpy(Sir,"mg/m");
+                    strcat(Sir,b);
+                    break;
+                case 4:
+                    strcpy(Sir,"g/cm");
+                    strcat(Sir,b);
+                    break;
+                case 5:
+                    strcpy(Sir,"g/l");
+                    strcat(Sir,b);
+                    break;
+                case 6:
+                    strcpy(Sir,"g/m");
+                    strcat(Sir,b);
+                    break;
+                case 7:
+                    strcpy(Sir,"kg/cm");
+                    strcat(Sir,b);
+                    break;
+                case 8:
+                    strcpy(Sir,"kg/l");
+                    break;
+                case 9:
+                    strcpy(Sir,"kg/m");
+                    strcat(Sir,b);
+                    break;
+            }
+    }
+void PrelucrareRezultatKGM(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare*1;
+                    break;
+                case 2:
+                    Valoare=Valoare/1000;
+                    break;
+                case 3:
+                    Valoare=Valoare/1000000;
+                    break;
+                case 4:
+                    Valoare=Valoare*1000;
+                    break;
+                case 5:
+                    Valoare=Valoare*1;
+                    break;
+                case 6:
+                    Valoare=Valoare/1000;
+                    break;
+                case 7:
+                    Valoare=Valoare*1000000;
+                    break;
+                case 8:
+                    Valoare=Valoare*1000;
+                    break;
+                case 9:
+                    Valoare=Valoare*1;
+                    break;
+            }
+    }
+void PrelucrareRezultatDensitate(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1;
+                    break;
+                case 2:
+                    Rezultat=Valoare*1000;
+                    break;
+                case 3:
+                    Rezultat=Valoare*1000000;
+                    break;
+                case 4:
+                    Rezultat=Valoare/1000;
+                    break;
+                case 5:
+                    Rezultat=Valoare*1;
+                    break;
+                case 6:
+                    Rezultat=Valoare*1000;
+                    break;
+                case 7:
+                    Rezultat=Valoare/1000000;
+                    break;
+                case 8:
+                    Rezultat=Valoare/1000;
+                    break;
+                case 9:
+                    Rezultat=Valoare;
+                    break;
+            }
+    }
+void AfisareRezultatDensitate(int index,char SirUnitati[10],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mg/cm"<<(char)252<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mg/l >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mg/m"<<(char)252<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" g/cm"<<(char)252<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" g/l >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" g/m"<<(char)252<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kg/cm"<<(char)252<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 8:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kg/l >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 9:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kg/m"<<(char)252<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+    }
+void MeniuDensitate()
+    {
+        int index,index2,index3;
+        char SirUnitati[10];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Densitate();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiDensitate(SirUnitati,index2);
+                PrelucrareRezultatKGM(index,copie);
+                PrelucrareRezultatDensitate(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatDensitate(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -1820,7 +2051,7 @@ void MeniuPrincipal()
                                 break;
                             case 10:
                                 system("cls");
-                                cout<<"test10 \n";
+                                MeniuDensitate();
                                 break;
                             case 11:
                                 system("cls");
