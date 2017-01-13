@@ -10,7 +10,7 @@ using namespace std;
 int GetInput()
     {
         int choice;
-        cout<<"                       Your choice: ";cin>>choice;
+        cout<<"                       Alegerea dvs. : ";cin>>choice;
         return choice;
     }
 void MeniuPrincipalAfisare()
@@ -59,14 +59,14 @@ double GetInputValoare()
 void Lungime()
     {
         cout<<"                              ################Lungime#################\n";
-    cout<<"                                                                      \n";
-    cout<<"                                Legenda:                              \n";
-    cout<<"                                                                      \n";
-    cout<<"                              1.mm-Milimetru          5.dam-Decametru \n";
-    cout<<"                              2.cm-Centimetru         6.hm-Hectometru \n";
-    cout<<"                              3.dm-Decimetru          7.km-Kilometru  \n";
-    cout<<"                              4.m-Metru               8.in-Inch       \n";
-    cout<<"\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.mm-Milimetru          5.dam-Decametru \n";
+        cout<<"                              2.cm-Centimetru         6.hm-Hectometru \n";
+        cout<<"                              3.dm-Decimetru          7.km-Kilometru  \n";
+        cout<<"                              4.m-Metru               8.in-Inch       \n";
+        cout<<"\n";
     }
 unsigned NumaraParteaFractionara(double number)
     {
@@ -295,6 +295,407 @@ void MeniuLungime()
                     }
             }while(index3!=2);
     }
+void Arie()
+    {
+        cout<<"                              ##################Aria##################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                                     1.mm";cout <<(char)253<<"-Milimetru patrat \n";
+        cout<<"                                     2.cm";cout <<(char)253<<"-Centimetru patrat \n";
+        cout<<"                                     3.dm";cout <<(char)253<<"-Decimetru patrat \n";
+        cout<<"                                     4.m";cout <<(char)253<<"-Metru patrat \n";
+        cout<<"                                     5.a-Ari \n";
+        cout<<"                                     6.ha-Hectari\n";
+        cout<<"                                     7.km";cout <<(char)253<<"-Kilometru patrat \n";
+        cout<<"\n";
+    }
+void SirulUnitatiArie(char Sir[4],int numar)
+    {
+        char b[2]={(char)253};
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"mm");
+                    strcat(Sir,b);
+                    break;
+                case 2:
+                    strcpy(Sir,"cm");
+                    strcat(Sir,b);
+                    break;
+                case 3:
+                    strcpy(Sir,"dm");
+                    strcat(Sir,b);
+                    break;
+                case 4:
+                    strcpy(Sir,"m");
+                    strcat(Sir,b);
+                    break;
+                case 5:
+                    strcpy(Sir,"a");
+                    break;
+                case 6:
+                    strcpy(Sir,"ha");
+                    break;
+                case 7:
+                    strcpy(Sir,"km");
+                    strcat(Sir,b);
+                    break;
+                default :
+                    break;
+            }
+    }
+void PrelucrareRezultatMetriArie(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare/1000000;
+                    break;
+                case 2:
+                    Valoare=Valoare/10000;
+                    break;
+                case 3:
+                    Valoare=Valoare/100;
+                    break;
+                case 4:
+                    Valoare=Valoare*1;
+                    break;
+                case 5:
+                    Valoare=Valoare*100;
+                    break;
+                case 6:
+                    Valoare=Valoare*10000;
+                    break;
+                case 7:
+                    Valoare=Valoare*1000000;
+                    break;
+            }
+    }
+void PrelucrareRezultatArie(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1000000;
+                    break;
+                case 2:
+                    Rezultat=Valoare*10000;
+                    break;
+                case 3:
+                    Rezultat=Valoare*100;
+                    break;
+                case 4:
+                    Rezultat=Valoare;
+                    break;
+                case 5:
+                    Rezultat=Valoare/100;
+                    break;
+                case 6:
+                    Rezultat=Valoare/10000;
+                    break;
+                case 7:
+                    Rezultat=Valoare/1000000;
+                    break;
+            }
+    }
+void AfisareRezultatArie(int index,char SirUnitati[6],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" mm";cout <<(char)253<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" cm";cout <<(char)253<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" dm";cout <<(char)253<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" m";cout <<(char)253<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" a >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" ha >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" km";cout <<(char)253<<" >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                }
+
+    }
+void MeniuArie()
+    {
+        int index,index2,index3;
+        char SirUnitati[6];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Arie();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiArie(SirUnitati,index2);
+                PrelucrareRezultatMetriArie(index,copie);
+                PrelucrareRezultatArie(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatArie(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
+void Volum()
+    {
+        cout<<"                              ################Lungime#################\n";
+        cout<<"                                                                      \n";
+        cout<<"                                Legenda:                              \n";
+        cout<<"                                                                      \n";
+        cout<<"                              1.ml-Mililitru          5.dal-Decalitru \n";
+        cout<<"                              2.cl-CentiLitru         6.hl-Hectolitru \n";
+        cout<<"                              3.dl-Decilitru          7.kl-Kilolitru  \n";
+        cout<<"                              4.l-Litru               8.m^3-Metri Cubi\n";
+        cout<<"\n";
+    }
+void SirulUnitatiVolum(char Sir[4],int numar)
+    {
+       switch(numar)
+            {
+                case 1:
+                    strcpy(Sir,"ml");
+                    break;
+                case 2:
+                    strcpy(Sir,"cl");
+                    break;
+                case 3:
+                    strcpy(Sir,"dl");
+                    break;
+                case 4:
+                    strcpy(Sir,"l");
+                    break;
+                case 5:
+                    strcpy(Sir,"dal");
+                    break;
+                case 6:
+                    strcpy(Sir,"hl");
+                    break;
+                case 7:
+                    strcpy(Sir,"kl");
+                    break;
+                case 8:
+                    strcpy(Sir,"m^3");
+                    break;
+            }
+    }
+void PrelucrareRezultatLitri(int index,double &Valoare)
+    {
+        switch(index)
+            {
+                case 1:
+                    Valoare=Valoare/1000;
+                    break;
+                case 2:
+                    Valoare=Valoare/100;
+                    break;
+                case 3:
+                    Valoare=Valoare/10;
+                    break;
+                case 4:
+                    Valoare=Valoare*1;
+                    break;
+                case 5:
+                    Valoare=Valoare*10;
+                    break;
+                case 6:
+                    Valoare=Valoare*100;
+                    break;
+                case 7:
+                    Valoare=Valoare*1000;
+                    break;
+                case 8:
+                    Valoare=Valoare*1000;
+                    break;
+            }
+    }
+void PrelucrareRezultatVolum(int index,double &Rezultat,double Valoare)
+    {
+       switch(index)
+            {
+                case 1:
+                    Rezultat=Valoare*1000;
+                    break;
+                case 2:
+                    Rezultat=Valoare*100;
+                    break;
+                case 3:
+                    Rezultat=Valoare*10;
+                    break;
+                case 4:
+                    Rezultat=Valoare;
+                    break;
+                case 5:
+                    Rezultat=Valoare/10;
+                    break;
+                case 6:
+                    Rezultat=Valoare/100;
+                    break;
+                case 7:
+                    Rezultat=Valoare/1000;
+                    break;
+                case 8:
+                    Rezultat=Valoare/1000;
+                    break;
+            }
+    }
+void AfisareRezultatVolum(int index,char SirUnitati[4],double ValoareaInitiala,double ValoareaRezultata)
+    {
+        cout<<"\n";
+        cout<<"\n";
+        cout<<"                              Rezultatul dvs. este: \n";
+        switch(index)
+                {
+                    case 1:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" ml >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 2:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" cl >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 3:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" dl >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 4:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" l >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 5:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" dal >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 6:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" hl >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 7:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" kl >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                    case 8:
+                        cout<<"                                 ";
+                        AfisarePrecizie(ValoareaInitiala);
+                        cout<<" m^3 >>> ";
+                        AfisarePrecizie(ValoareaRezultata);
+                        cout<<" "<<SirUnitati<<"\n";
+                        break;
+                        break;
+                }
+    }
+void MeniuVolum()
+    {
+        int index,index2,index3;
+        char SirUnitati[5];
+        double ValoareaInitiala,ValoareaRezultata,copie;
+        do
+            {
+                Volum();
+                index=GetInputUnitati1();
+                index2=GetInputUnitati2();
+                cout<<"\n";
+                ValoareaInitiala=GetInputValoare();
+                copie=ValoareaInitiala;
+                cout<<"\n";
+                SirulUnitatiVolum(SirUnitati,index2);
+                PrelucrareRezultatLitri(index,copie);
+                PrelucrareRezultatVolum(index2,ValoareaRezultata,copie);
+                system ("cls");
+                AfisareRezultatVolum(index,SirUnitati,ValoareaInitiala,ValoareaRezultata);
+                std::cout << std::fixed;
+                cout<<"\n";
+                MeniuExit();
+                index3=GetInPutExit();
+                system ("cls");
+                switch(index3)
+                    {
+                        case 3:
+                            cout <<"\n                            Goodbye!\n";
+                            exit('exit');
+                            break;
+                        case 2:
+                            break;
+                    }
+            }while(index3!=2);
+    }
 void MeniuPrincipal()
     {
         unsigned c=0;
@@ -310,11 +711,11 @@ void MeniuPrincipal()
                                 break;
                             case 2:
                                 system("cls");
-                                cout<<"test2 \n";
+                                MeniuArie();
                                 break;
                             case 3:
                                 system("cls");
-                                cout<<"test3 \n";
+                                MeniuVolum();
                                 break;
                             case 4:
                                 system("cls");
